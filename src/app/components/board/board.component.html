@@ -1,0 +1,20 @@
+<div class="controls">
+    <label>Rows: 
+        <input type="number" [(ngModel)]="lines" min="1" (change)="saveBoardSize()">
+    </label>
+    <label>Columns: 
+        <input type="number" [(ngModel)]="columns" min="1" (change)="saveBoardSize()">
+    </label>
+    <button (click)="updateBoard()">Update Board</button>
+    <button (click)="restartBoard()">Restart</button>
+</div>
+
+<div class="board">
+    <div *ngFor="let i of createArray(lines); let rowIndex = index" class="row" 
+         [ngClass]="{'bold-border-row': (rowIndex + 1) % 5 === 0}">
+        <div *ngFor="let j of createArray(columns); let colIndex = index" class="cell"  
+             [ngClass]="{'bold-border-col': (colIndex + 1) % 5 === 0}">
+            <app-cube [rowIndex]="rowIndex" [colIndex]="colIndex"></app-cube>
+        </div>
+    </div>
+</div>

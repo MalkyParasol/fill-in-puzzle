@@ -1,0 +1,16 @@
+.row{
+    display: flex;
+}
+.board{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.bold-border-row {
+    border-bottom: 3px solid black;
+  }
+  
+  // Bold borders every 5 columns
+  .bold-border-col {
+    border-right: 3px solid black;
+  }
